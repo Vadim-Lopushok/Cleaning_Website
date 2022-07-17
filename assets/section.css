@@ -1,0 +1,13 @@
+.section-title {
+  margin-bottom: 10px;
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.section-title span {
+  color: dodgerblue;
+}
+/*# sourceMappingURL=section.css.map */

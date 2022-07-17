@@ -1,0 +1,31 @@
+// Main file style.less
+
+.section-title {
+  margin-bottom: 10px;
+  font-size: 4rem;
+  font-weight: 300;
+  color: @blackColor;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  text-align: center;
+
+  span {
+    color: @dblueColor;
+  }
+}
+
+section {
+  &:not(:first-of-type) {
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
+  }
+}
+
+// Container
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
