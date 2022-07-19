@@ -459,6 +459,10 @@
 
       p {
         color: @whiteColor;
+        font-size: 1.2rem;
+        @media screen and (min-width: 1200px) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -512,7 +516,7 @@
         top: 19px;
         height: 98%;
         width: 98%;
-        border: 7px solid dodgerblue;
+        border: 7px solid #5D94EE;
         content: '';
       }
     }
@@ -707,7 +711,7 @@
             top: 34px;
             height: 98%;
             width: 98%;
-            border: 10px solid #5B94E0;
+            border: 10px solid #5D94EE;
           }
         }
       }
@@ -845,6 +849,15 @@
 }
 
 @media screen and (max-width: 280px) {
+  .services{
+    .services-item {
+      .services-info {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
   .section-title {
     font-size: 2.5rem;
   }
