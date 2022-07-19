@@ -30,6 +30,13 @@ html {
   font-family: 'Montserrat', sans-serif;
   scroll-behavior: smooth;
 }
+body {
+  background: url("../assets/images/landbackground4.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 img {
   height: 100%;
   width: 100%;
@@ -92,6 +99,10 @@ section:not(:first-of-type) {
 }
 .brand h2 span {
   color: dodgerblue;
+}
+.brand h2 .special {
+  font-size: 1.6rem;
+  color: #51a9ff;
 }
 .header {
   position: fixed;
@@ -347,7 +358,8 @@ section:not(:first-of-type) {
 }
 .workpoints .workpoints-item:hover:after {
   opacity: 1;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  background: #1c2229;
+  transition: all 0.3s ease;
 }
 .workpoints .workpoints-item h2 {
   margin-bottom: 10px;
@@ -405,11 +417,12 @@ section:not(:first-of-type) {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: linear-gradient(#304c66 0%, #29323c 100%);
 }
 .service .services-item:hover .project-img img {
   transform: scale(1.1);
 }
-.service .services-info {
+.service .services-item .services-info {
   display: flex;
   height: 100%;
   padding: 30px;
@@ -417,10 +430,9 @@ section:not(:first-of-type) {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   color: white;
 }
-.service .services-info h2 {
+.service .services-item .services-info h2 {
   display: inline;
   margin-bottom: 5px;
   background: linear-gradient(90deg, #fafafa, dodgerblue);
@@ -430,22 +442,22 @@ section:not(:first-of-type) {
   font-size: 2.5rem;
   font-weight: 900;
 }
-.service .services-info h3 {
+.service .services-item .services-info h3 {
   margin-top: 10px;
   font-size: 1.8rem;
   font-weight: 500;
   font-style: italic;
 }
-.service .services-info p {
+.service .services-item .services-info p {
   color: white;
 }
-.service .project-img {
+.service .services-item .project-img {
   position: relative;
   overflow: hidden;
   height: 300px;
   flex-basis: 50%;
 }
-.service .project-img:after {
+.service .services-item .project-img:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -455,7 +467,7 @@ section:not(:first-of-type) {
   opacity: 0.7;
   content: '';
 }
-.service .project-img img {
+.service .services-item .project-img img {
   transition: 0.3s ease transform;
 }
 .about .about-box {
@@ -471,9 +483,8 @@ section:not(:first-of-type) {
 }
 .about .col-left .about-img {
   position: relative;
-  height: 100%;
   width: 100%;
-  border: 10px solid aliceblue;
+  border: 10px solid transparent;
 }
 .about .col-left .about-img::after {
   position: absolute;
@@ -549,6 +560,14 @@ section:not(:first-of-type) {
   min-height: 200px;
   flex-direction: column;
 }
+.footer .footer-box .link--special {
+  color: #84c2ff;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+.footer .footer-box .link--special:hover {
+  color: #0077ea;
+}
 .footer h3 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -586,7 +605,7 @@ section:not(:first-of-type) {
     font-size: 6rem;
   }
   .mainPage h2 {
-    font-size: 7rem;
+    font-size: 6rem;
   }
   .big-box .workpoints-bottom .workpoints-item {
     margin: 2.5%;
@@ -616,7 +635,7 @@ section:not(:first-of-type) {
     top: 34px;
     height: 98%;
     width: 98%;
-    border: 10px solid #229EAB;
+    border: 10px solid #5B94E0;
   }
   .about .col-left {
     width: 600px;
@@ -663,6 +682,21 @@ section:not(:first-of-type) {
   }
 }
 @media only screen and (min-width: 1200px) {
+  .services-item:nth-of-type(odd) {
+    background: linear-gradient(90deg, #29323c 0%, #5b80a5 100%);
+  }
+  .services-item:nth-of-type(even) {
+    background: linear-gradient(90deg, #5b80a5 0%, #29323c 100%);
+  }
+  .workpoints {
+    opacity: 0;
+  }
+  .about {
+    opacity: 0;
+  }
+  .contacts {
+    opacity: 0;
+  }
   .workpoints-top p {
     font-size: 1.6rem;
   }
@@ -740,5 +774,10 @@ section:not(:first-of-type) {
     color: dodgerblue;
     font-weight: 500;
   }
+}
+.elem-show {
+  opacity: 1;
+  transition: all 1.5s;
+  transform: translateX(0%);
 }
 /*# sourceMappingURL=style.css.map */

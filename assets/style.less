@@ -32,6 +32,12 @@
     span {
       color: @dblueColor;
     }
+
+    .special {
+      font-size: 1.6rem;
+      color: lighten(@dblueColor, 10%);
+    }
+
   }
 }
 
@@ -339,7 +345,8 @@
     &:hover {
       &:after {
         opacity: 1;
-        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        background: #1c2229;
+        transition: all .3s ease;
       }
     }
 
@@ -412,6 +419,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: linear-gradient(#304c66 0%, #29323c 100%);
 
     &:hover {
       .project-img {
@@ -420,61 +428,60 @@
         }
       }
     }
-  }
 
-  .services-info {
-    display: flex;
-    height: 100%;
-    padding: 30px;
-    flex-basis: 50%;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-    color: @whiteColor;
-
-    h2 {
-      display: inline;
-      margin-bottom: 5px;
-      background: linear-gradient(90deg, #fafafa, dodgerblue);
-      background-position: 0 100%;
-      background-size: 100% 2px;
-      background-repeat: no-repeat;
-      font-size: 2.5rem;
-      font-weight: 900;
-    }
-
-    h3 {
-      margin-top: 10px;
-      font-size: 1.8rem;
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    p {
-      color: @whiteColor;
-    }
-  }
-
-  .project-img {
-    position: relative;
-    overflow: hidden;
-    height: 300px;
-    flex-basis: 50%;
-
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .services-info {
+      display: flex;
       height: 100%;
-      width: 100%;
-      background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-      opacity: .7;
-      content: '';
+      padding: 30px;
+      flex-basis: 50%;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      color: @whiteColor;
+
+      h2 {
+        display: inline;
+        margin-bottom: 5px;
+        background: linear-gradient(90deg, #fafafa, dodgerblue);
+        background-position: 0 100%;
+        background-size: 100% 2px;
+        background-repeat: no-repeat;
+        font-size: 2.5rem;
+        font-weight: 900;
+      }
+
+      h3 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      p {
+        color: @whiteColor;
+      }
     }
 
-    img {
-      transition: .3s ease transform;
+    .project-img {
+      position: relative;
+      overflow: hidden;
+      height: 300px;
+      flex-basis: 50%;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        opacity: .7;
+        content: '';
+      }
+
+      img {
+        transition: .3s ease transform;
+      }
     }
   }
 }
@@ -495,9 +502,8 @@
 
     .about-img {
       position: relative;
-      height: 100%;
       width: 100%;
-      border: 10px solid aliceblue;
+      border: 10px solid transparent;
 
       &::after {
         position: absolute;
@@ -593,6 +599,16 @@
     padding-bottom: 10px;
     min-height: 200px;
     flex-direction: column;
+
+    .link--special {
+      color: lighten(@dblueColor, 20%);
+      font-family: 'Montserrat', sans-serif;
+      transition: all .3s ease;
+
+      &:hover {
+        color: darken(@dblueColor, 10%);
+      }
+    }
   }
 
   h3 {
@@ -643,7 +659,7 @@
 
   .mainPage {
     h2 {
-      font-size: 7rem;
+      font-size: 6rem;
     }
   }
 
@@ -691,7 +707,7 @@
             top: 34px;
             height: 98%;
             width: 98%;
-            border: 10px solid #229EAB;
+            border: 10px solid #5B94E0;
           }
         }
       }
@@ -754,6 +770,28 @@
 }
 
 @media only screen and (min-width: 1200px) {
+  .services-item {
+    &:nth-of-type(odd) {
+      background: linear-gradient(90deg, #29323c 0%, #5b80a5 100%);
+    }
+
+    &:nth-of-type(even) {
+      background: linear-gradient(90deg, #5b80a5 0%, #29323c 100%);
+    }
+  }
+
+  .workpoints {
+    opacity: 0;
+  }
+
+  .about {
+    opacity: 0;
+  }
+
+  .contacts {
+    opacity: 0;
+  }
+
   .workpoints-top {
     p {
       font-size: 1.6rem;
@@ -872,4 +910,10 @@
     color: dodgerblue;
     font-weight: 500;
   }
+}
+
+.elem-show {
+  opacity: 1;
+  transition: all 1.5s;
+  transform: translateX(0%);
 }

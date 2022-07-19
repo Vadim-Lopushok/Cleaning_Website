@@ -26,3 +26,30 @@ menuItem.forEach(item => {
   })
 })
 
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('elem-show');
+    }
+  });
+}
+
+let options = {
+  threshold: [0.5]
+};
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.workpoints');
+let abt = document.querySelectorAll('.about');
+let contc = document.querySelectorAll('.contacts');
+
+for (let elm of elements) {
+  observer.observe(elm);
+}
+
+for (let i of abt) {
+  observer.observe((i));
+}
+
+for (let i of contc) {
+  observer.observe(i);
+}
